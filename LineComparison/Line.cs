@@ -10,7 +10,7 @@ namespace LineComparison
     {
         public double GetLength()
         {
-            Console.WriteLine("eneter 4 values (x1, y1, x2, y2)");
+            Console.WriteLine("eneter values (x1, y1, x2, y2)");
             int x1 = Convert.ToInt32(Console.ReadLine());
             int y1 = Convert.ToInt32(Console.ReadLine());
             int x2 = Convert.ToInt32(Console.ReadLine());

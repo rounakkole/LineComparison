@@ -9,18 +9,34 @@ namespace LineComparison
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Line Comparison Computation Program");
-            bool result = Compare();
-            Console.WriteLine($"equality: {result}");
+            Output();
         }
 
-        public static bool Compare()
+        public static int Compare()
         {
             Line line1 = new Line();
             Line line2 = new Line();
             double length1 = line1.GetLength();
             double length2 = line2.GetLength();
-            bool result = length1.Equals(length2);
+            int result = length1.CompareTo(length2);
             return result;
+        }
+
+        public static void Output()
+        {
+            int result = Compare();
+            switch (result)
+            {
+                case 1:
+                    Console.WriteLine("line1 is greater than line2");
+                    break;
+                case -1:
+                    Console.WriteLine("line1 is less than line2");
+                    break;
+                default:
+                    Console.WriteLine("line1 is equal to line2");
+                    break;
+            }
         }
     }
 }
