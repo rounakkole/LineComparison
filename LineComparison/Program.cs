@@ -9,23 +9,18 @@ namespace LineComparison
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Line Comparison Computation Program");
-            double length=GetLength();
-            Console.WriteLine($"length: {length}");
+            bool result = Compare();
+            Console.WriteLine($"equality: {result}");
         }
 
-        public static double GetLength()
+        public static bool Compare()
         {
-            Console.WriteLine("eneter 4 values (x1, y1, x2, y2)");
-            int x1 = Convert.ToInt32(Console.ReadLine());
-            int y1 = Convert.ToInt32(Console.ReadLine());
-            int x2 = Convert.ToInt32(Console.ReadLine());
-            int y2 = Convert.ToInt32(Console.ReadLine());
-
-            double length = Math.Sqrt((Math.Pow((x2 - x1), 2)) + (Math.Pow((y2 - y1), 2)));
-            return length;
+            Line line1 = new Line();
+            Line line2 = new Line();
+            double length1 = line1.GetLength();
+            double length2 = line2.GetLength();
+            bool result = length1.Equals(length2);
+            return result;
         }
-
-
-
     }
 }
